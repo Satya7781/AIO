@@ -1,42 +1,74 @@
+import type { Variants } from 'framer-motion';
+
 // Reusable Framer Motion animation variants for consistent animations across the app
 
-export const fadeInUp = {
+export const fadeInUp: Variants = {
     initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-    transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+    animate: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+    },
+    exit: {
+        opacity: 0,
+        y: -20,
+        transition: { duration: 0.3 }
+    }
 };
 
-export const fadeIn = {
+export const fadeIn: Variants = {
     initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    exit: { opacity: 0 },
-    transition: { duration: 0.4 }
+    animate: {
+        opacity: 1,
+        transition: { duration: 0.4 }
+    },
+    exit: { opacity: 0 }
 };
 
-export const scaleIn = {
+export const scaleIn: Variants = {
     initial: { opacity: 0, scale: 0.95 },
-    animate: { opacity: 1, scale: 1 },
-    exit: { opacity: 0, scale: 0.95 },
-    transition: { duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }
+    animate: {
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }
+    },
+    exit: {
+        opacity: 0,
+        scale: 0.95,
+        transition: { duration: 0.3 }
+    }
 };
 
-export const slideInLeft = {
+export const slideInLeft: Variants = {
     initial: { opacity: 0, x: -30 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: 30 },
-    transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+    },
+    exit: {
+        opacity: 0,
+        x: 30,
+        transition: { duration: 0.3 }
+    }
 };
 
-export const slideInRight = {
+export const slideInRight: Variants = {
     initial: { opacity: 0, x: 30 },
-    animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -30 },
-    transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+    animate: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+    },
+    exit: {
+        opacity: 0,
+        x: -30,
+        transition: { duration: 0.3 }
+    }
 };
 
 // Container variants for staggered children
-export const staggerContainer = {
+export const staggerContainer: Variants = {
     initial: {},
     animate: {
         transition: {
@@ -46,7 +78,7 @@ export const staggerContainer = {
     }
 };
 
-export const staggerItem = {
+export const staggerItem: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: {
         opacity: 1,
@@ -56,7 +88,7 @@ export const staggerItem = {
 };
 
 // Button hover variants
-export const buttonHover = {
+export const buttonHover: Variants = {
     rest: { scale: 1 },
     hover: {
         scale: 1.02,
@@ -66,7 +98,7 @@ export const buttonHover = {
 };
 
 // Card hover variants
-export const cardHover = {
+export const cardHover: Variants = {
     rest: { y: 0, scale: 1 },
     hover: {
         y: -8,
@@ -76,7 +108,7 @@ export const cardHover = {
 };
 
 // Navbar scroll variants
-export const navbarScroll = {
+export const navbarScroll: Variants = {
     top: {
         backgroundColor: 'rgba(2, 6, 23, 0)',
         boxShadow: '0 0 0 0 rgba(0, 0, 0, 0)',
@@ -91,7 +123,7 @@ export const navbarScroll = {
 };
 
 // Page transition variants
-export const pageTransition = {
+export const pageTransition: Variants = {
     initial: { opacity: 0, y: 20 },
     animate: {
         opacity: 1,
@@ -106,18 +138,17 @@ export const pageTransition = {
 };
 
 // Section reveal on scroll
-export const sectionReveal = {
+export const sectionReveal: Variants = {
     initial: { opacity: 0, y: 40 },
     whileInView: {
         opacity: 1,
         y: 0,
         transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
-    },
-    viewport: { once: true, margin: '-100px' }
+    }
 };
 
 // Icon rotation on hover
-export const iconRotate = {
+export const iconRotate: Variants = {
     rest: { rotate: 0 },
     hover: {
         rotate: 360,
@@ -126,7 +157,7 @@ export const iconRotate = {
 };
 
 // Glow effect
-export const glowEffect = {
+export const glowEffect: Variants = {
     rest: {
         boxShadow: '0 0 0 0 rgba(59, 130, 246, 0)'
     },
@@ -137,7 +168,7 @@ export const glowEffect = {
 };
 
 // Pulse animation
-export const pulse = {
+export const pulse: Variants = {
     animate: {
         scale: [1, 1.05, 1],
         opacity: [1, 0.8, 1],
@@ -150,7 +181,7 @@ export const pulse = {
 };
 
 // Float animation
-export const float = {
+export const float: Variants = {
     animate: {
         y: [0, -10, 0],
         transition: {
