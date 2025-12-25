@@ -2,69 +2,39 @@ import type { Variants } from 'framer-motion';
 
 // Reusable Framer Motion animation variants for consistent animations across the app
 
-export const fadeInUp: Variants = {
+export const fadeInUp = {
     initial: { opacity: 0, y: 20 },
-    animate: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
-    },
-    exit: {
-        opacity: 0,
-        y: -20,
-        transition: { duration: 0.3 }
-    }
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+    transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] as const }
 };
 
-export const fadeIn: Variants = {
+export const fadeIn = {
     initial: { opacity: 0 },
-    animate: {
-        opacity: 1,
-        transition: { duration: 0.4 }
-    },
-    exit: { opacity: 0 }
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+    transition: { duration: 0.4 }
 };
 
-export const scaleIn: Variants = {
+export const scaleIn = {
     initial: { opacity: 0, scale: 0.95 },
-    animate: {
-        opacity: 1,
-        scale: 1,
-        transition: { duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }
-    },
-    exit: {
-        opacity: 0,
-        scale: 0.95,
-        transition: { duration: 0.3 }
-    }
+    animate: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.95 },
+    transition: { duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] as const }
 };
 
-export const slideInLeft: Variants = {
+export const slideInLeft = {
     initial: { opacity: 0, x: -30 },
-    animate: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
-    },
-    exit: {
-        opacity: 0,
-        x: 30,
-        transition: { duration: 0.3 }
-    }
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 30 },
+    transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] as const }
 };
 
-export const slideInRight: Variants = {
+export const slideInRight = {
     initial: { opacity: 0, x: 30 },
-    animate: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
-    },
-    exit: {
-        opacity: 0,
-        x: -30,
-        transition: { duration: 0.3 }
-    }
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -30 },
+    transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] as const }
 };
 
 // Container variants for staggered children
@@ -83,7 +53,7 @@ export const staggerItem: Variants = {
     animate: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] }
+        transition: { duration: 0.5, ease: [0.6, -0.05, 0.01, 0.99] as const }
     }
 };
 
@@ -103,7 +73,7 @@ export const cardHover: Variants = {
     hover: {
         y: -8,
         scale: 1.02,
-        transition: { duration: 0.3, ease: [0.6, -0.05, 0.01, 0.99] }
+        transition: { duration: 0.3, ease: [0.6, -0.05, 0.01, 0.99] as const }
     }
 };
 
@@ -128,7 +98,7 @@ export const pageTransition: Variants = {
     animate: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] }
+        transition: { duration: 0.4, ease: [0.6, -0.05, 0.01, 0.99] as const }
     },
     exit: {
         opacity: 0,
@@ -138,13 +108,14 @@ export const pageTransition: Variants = {
 };
 
 // Section reveal on scroll
-export const sectionReveal: Variants = {
+export const sectionReveal = {
     initial: { opacity: 0, y: 40 },
     whileInView: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
-    }
+        transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] as const }
+    },
+    viewport: { once: true, margin: '-100px' }
 };
 
 // Icon rotation on hover
@@ -152,7 +123,7 @@ export const iconRotate: Variants = {
     rest: { rotate: 0 },
     hover: {
         rotate: 360,
-        transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] }
+        transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] as const }
     }
 };
 
@@ -168,26 +139,26 @@ export const glowEffect: Variants = {
 };
 
 // Pulse animation
-export const pulse: Variants = {
+export const pulse = {
     animate: {
         scale: [1, 1.05, 1],
         opacity: [1, 0.8, 1],
         transition: {
             duration: 2,
             repeat: Infinity,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as const
         }
     }
 };
 
 // Float animation
-export const float: Variants = {
+export const float = {
     animate: {
         y: [0, -10, 0],
         transition: {
             duration: 3,
             repeat: Infinity,
-            ease: 'easeInOut'
+            ease: 'easeInOut' as const
         }
     }
 };
